@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.search-container {
+  background-color: rgb(65, 121, 104);
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.shop-container {
+  margin: 20px;
+  /* border: 2px solid black; */
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.shop-body {
+  padding: 5px;
+}
+.shop-cart {
+  border-left: 1px solid lightgray;
+  padding: 5px;
+}
