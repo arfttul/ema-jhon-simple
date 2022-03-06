@@ -15,7 +15,7 @@
 }
 .nav-item {
   text-decoration: none;
-  color: white;
+  
 }
 .nav-item + .nav-item {
   margin-left: 50px;

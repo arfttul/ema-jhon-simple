@@ -5,21 +5,15 @@ import Product from "../Product/Product";
 import "./Shop.css";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useProducts from "../../Hooks/useProducts/useProducts";
 
 const Shop = () => {
-  const [products, setProducts] = useState([]);
+  const [products] = useProducts();
   const [cart, setCart] = useState([]);
   const [showProducts, setShowProducts] = useState([]);
-  useEffect(() => {
-    fetch("./products.JSON")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        setShowProducts(data);
-      });
-  }, []);
 
   useEffect(() => {
+    setShowProducts(products);
     if (products.length) {
       const savedCart = getStoredCart();
       const storedCart = [];

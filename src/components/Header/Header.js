@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink, Outlet } from "react-router-dom";
 import logo from "../../images/logo.png";
 import "./Header.css";
 const Header = () => {
@@ -8,15 +9,44 @@ const Header = () => {
         <img src={logo} alt="ema-jhon-logo"></img>
       </div>
       <nav className="nav">
-        <a className="nav-item" href="/shop">
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              color: isActive ? "yellow" : "white",
+              fontSize: isActive ? "24px" : "18",
+              textDecoration: "none",
+            };
+          }}
+          to="/shop"
+        >
           Shop
-        </a>
-        <a className="nav-item" href="/order-review">
+        </NavLink>
+
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              color: isActive ? "yellow" : "white",
+              fontSize: isActive ? "24px" : "18",
+              textDecoration: "none",
+            };
+          }}
+          to="/order-review"
+        >
           Order Review
-        </a>
-        <a className="nav-item" href="/manage-inventory">
+        </NavLink>
+
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              color: isActive ? "yellow" : "white",
+              fontSize: isActive ? "24px" : "18",
+              textDecoration: "none",
+            };
+          }}
+          to="/manage-inventory"
+        >
           Manage Inventory
-        </a>
+        </NavLink>
       </nav>
     </div>
   );
