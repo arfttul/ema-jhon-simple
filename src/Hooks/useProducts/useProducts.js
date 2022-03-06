@@ -6,12 +6,12 @@ const useProducts = () => {
     fetch("./products.JSON")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setProducts(data);
       });
   }, []);
 
-  return [products];
+  return [products,setProducts];
 };
 
 export default useProducts;

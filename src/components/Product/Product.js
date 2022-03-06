@@ -9,7 +9,7 @@ const Product = (props) => {
     props.product;
   // console.log(props.product);
   const element = <FontAwesomeIcon icon={faShoppingCart} />;
-  const rating = 0;
+
   return (
     <div className="product-container">
       <div className="img-container">
@@ -21,7 +21,6 @@ const Product = (props) => {
           <small>by: {seller} </small>
         </p>
         <div className="rating-container">
-          <div className="emty-rating"></div>
           <div className="rating">
             {
               <Rating

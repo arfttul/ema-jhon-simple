@@ -22,3 +22,9 @@
   padding-top: 5px;
   border-top: 1px solid gainsboro;
 }
+.btn-review {
+  padding: 5px 10px;
+  margin: 10px 0;
+  background-color: rgb(233, 152, 94);
+  
+}

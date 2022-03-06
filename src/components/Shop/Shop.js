@@ -6,25 +6,16 @@ import "./Shop.css";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useProducts from "../../Hooks/useProducts/useProducts";
+import useCart from "../../Hooks/useCart/useCart";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [products] = useProducts();
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useCart(products);
   const [showProducts, setShowProducts] = useState([]);
 
   useEffect(() => {
     setShowProducts(products);
-    if (products.length) {
-      const savedCart = getStoredCart();
-      const storedCart = [];
-      for (const key in savedCart) {
-        const itemQuantity = savedCart[key];
-        const addedProduct = products.find((product) => product.key === key);
-        addedProduct.quantity = itemQuantity;
-        storedCart.push(addedProduct);
-      }
-      setCart(storedCart);
-    }
   }, [products]);
 
   const addToCart = (product) => {
@@ -67,7 +58,21 @@ const Shop = () => {
           })}
         </div>
         <div className="shop-cart">
-          <Cart cart={cart}></Cart>
+          <Cart cart={cart}>
+            <button className="btn-review">
+              <Link
+                style={{
+                  textDecoration: "none",
+                  fontSize: "18px",
+                  color: "whitesmoke",
+                }}
+                to="/order-review"
+              >
+                {" "}
+                Review Order{" "}
+              </Link>
+            </button>
+          </Cart>
         </div>
       </div>
     </>
